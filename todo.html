@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="todo.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+  </head>
+  <body>
+    <div class="todoContainer">
+      <div class="todoContent">
+        <h1>To Do List</h1>
+        <label>Todo's</label>
+        <input id="todos" type="text" />
+        <button id="addTodo">Add Todo</button> <br />
+        <div class="todoList">
+          <div class="todo">
+            <span class="check"></span>
+            <p>Buy 8 potatoes</p>
+            <div class="buttons">
+              <button class="checked">
+                <i class="fa-solid fa-check"></i>
+              </button>
+              <button class="remove">
+                <i class="fa-solid fa-x"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="todo.js"></script>
+  </body>
+</html>

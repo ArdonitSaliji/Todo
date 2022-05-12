@@ -1,6 +1,7 @@
 let todoList = $('.todoList')
 
 $('#addTodo').click(function () {
+  let todoList = $('.todoList')
   let text = $('#todos').val()
   let pValue = `<p>` + text + `</p>`
   let addTodo = $(
@@ -20,17 +21,39 @@ $('#addTodo').click(function () {
   if (text.length > 0) {
     todoList.append(addTodo)
   }
-  $('.checked').click(function (e) {
-    $(e.target).closest('.todo').css({ opacity: '0.6', transition: '0.5s' })
-  })
+
+  localStorage.setItem('addedTodo', todoList.html())
+  console.log(localStorage)
+  let x = localStorage.getItem('addedTodo')
+  todoList.html(x)
   $('.remove').click(function (e) {
     $(e.target).closest('.todo').hide()
+    localStorage.setItem('addedTodo', todoList.html())
   })
+  $('.checked').click(function (e) {
+    $(e.target).closest('.todo').css({
+      opacity: '0.6',
+      transition: '0.5s',
+      'text-decoration': 'line-through'
+    })
+
+    localStorage.setItem('addedTodo', todoList.html())
+  })
+})
+let x = localStorage.getItem('addedTodo')
+todoList.html(x)
+
+$('.remove').click(function (e) {
+  $(e.target).closest('.todo').hide()
+  localStorage.setItem('addedTodo', todoList.html())
 })
 
 $('.checked').click(function (e) {
-  $(e.target).closest('.todo').css({ opacity: '0.6', transition: '0.5s' })
-})
-$('.remove').click(function (e) {
-  $(e.target).closest('.todo').hide()
+  $(e.target).closest('.todo').css({
+    opacity: '0.6',
+    transition: '0.5s',
+    'text-decoration': 'line-through'
+  })
+
+  localStorage.setItem('addedTodo', todoList.html())
 })
